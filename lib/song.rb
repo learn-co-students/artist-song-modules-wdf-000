@@ -7,7 +7,7 @@ class Song
   include Memorable::InstanceMethods
   include Paramable::InstanceMethods
   extend Findable::ClassMethods
-  
+
 
   attr_accessor :name
   attr_reader :artist
@@ -24,6 +24,7 @@ class Song
 
   def artist=(artist)
     @artist = artist
+    artist.add_song(self) unless aritst.songs.include?(self)
   end
 
   # def self.reset_all
