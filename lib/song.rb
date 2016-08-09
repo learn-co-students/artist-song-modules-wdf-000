@@ -1,6 +1,7 @@
 require 'pry'
 
 class Song
+
   attr_accessor :name
   attr_reader :artist
 
@@ -11,7 +12,7 @@ class Song
   end
 
   def self.find_by_name(name)
-    @@songs.detect{|a| a.name}
+    @@songs.detect{|artist| artist.name}
   end
 
   def artist=(artist)
