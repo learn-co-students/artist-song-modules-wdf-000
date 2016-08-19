@@ -1,7 +1,8 @@
 require 'pry'
 
 class Song
-
+  
+  include Paramable
   extend Memorable::ClassMethods
   include Memorable::InstanceMethods
 
@@ -30,9 +31,9 @@ class Song
   #   self.all.count
   # end
 
-  def to_param
-    name.downcase.gsub(' ', '-')
-  end
+  # def to_param
+  #   name.downcase.gsub(' ', '-')
+  # end
 
   def self.all
     @@songs

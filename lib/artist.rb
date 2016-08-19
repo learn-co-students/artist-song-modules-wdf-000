@@ -2,6 +2,7 @@ require 'pry'
 
 class Artist
 
+  include Paramable
   extend Memorable::ClassMethods
   include Memorable::InstanceMethods
 
@@ -40,7 +41,7 @@ class Artist
     songs.each { |song| add_song(song) }
   end
 
-  def to_param
-    name.downcase.gsub(' ', '-')
-  end
+  # def to_param
+  #   name.downcase.gsub(' ', '-')
+  # end
 end
